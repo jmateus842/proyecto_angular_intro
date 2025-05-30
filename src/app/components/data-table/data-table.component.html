@@ -1,18 +1,21 @@
 <div class="container my-5">
   <!-- String interpolation para el titulo -->
-  <h2 class="text-center mb-4">{{ titulo }}</h2>
+  <h2 class="text-center mb-3" style="color: var(--primary-color);">{{ titulo }}</h2>
+  <div class="d-flex justify-content-center mb-4">
+    <div style="width: 60px; height: 3px; background-color: var(--primary-color);"></div>
+  </div>
   
   <!-- Boton para cargar nuevos datos -->
   <div class="d-flex justify-content-end mb-3">
-    <button class="btn btn-primary" (click)="cargarNuevosDatos()">
-      Cargar Nuevos Datos
+    <button class="btn" style="background-color: var(--primary-color); color: white;" (click)="cargarNuevosDatos()">
+      <i class="bi bi-arrow-repeat me-2"></i> Cargar Nuevos Datos
     </button>
   </div>
   
   <!-- Tabla con los datos -->
   <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover">
-      <thead class="table-dark">
+      <thead style="background-color: var(--primary-color); color: white;">
         <tr>
           <th scope="col">#</th>
           <th scope="col">Columna 1</th>
@@ -33,7 +36,7 @@
   </div>
   
   <!-- Resumen de informacion -->
-  <div class="alert alert-info mt-3">
+  <div class="alert mt-3" style="background-color: #f8f0f0; border-left: 4px solid var(--primary-color); color: var(--primary-dark);">
     <strong>Información:</strong> Tabla con {{ datosTabla.length }} filas y 3 columnas de datos.
   </div>
 </div>

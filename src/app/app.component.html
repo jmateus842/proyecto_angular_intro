@@ -1,26 +1,46 @@
 <div class="container-fluid">
   <!-- Ejemplo de string interpolation en el encabezado -->
-  <header class="bg-primary text-white py-4 mb-4">
+  <header class="py-4 mb-4" style="background-color: var(--primary-color);">
     <div class="container">
-      <h1 class="display-5">{{ title }}</h1>
-      <p class="lead">{{ subtitle }}</p>
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h1 class="display-5 text-white mb-0">{{ title }}</h1>
+          <p class="lead text-white opacity-75 mb-0">{{ subtitle }}</p>
+        </div>
+        <div class="col-md-4 text-md-end mt-3 mt-md-0">
+          <button class="btn btn-outline-light">Explorar Galería</button>
+        </div>
+      </div>
     </div>
   </header>
 
   <div class="container mb-5">
     <!-- Ejemplo de *ngFor - iterando sobre el array de fotos -->
-    <h2 class="text-center mb-4">Nuestra Galería de Fotos</h2>
-    <p class="text-center text-muted mb-4">Usando *ngFor para repetir elementos</p>
+    <div class="text-center mb-5">
+      <h2 class="mb-3" style="color: var(--primary-color);">Nuestra Galería de Fotos</h2>
+      <div class="d-flex justify-content-center">
+        <div style="width: 60px; height: 3px; background-color: var(--primary-color);"></div>
+      </div>
+      <p class="text-muted mt-3">Usando *ngFor para repetir elementos</p>
+    </div>
     
     <div class="row">
       <!-- Aqui usamos *ngFor para repetir este div para cada foto en el array -->
       <div class="col-md-3 mb-4" *ngFor="let photo of photos; let i = index">
-        <div class="card h-100">
-          <img [src]="photo.url" class="card-img-top" alt="{{ photo.title }}">
-          <div class="card-body">
-            <h5 class="card-title">{{ photo.title }}</h5>
+        <div class="card h-100 border-0">
+          <div class="position-relative overflow-hidden" style="border-radius: 8px;">
+            <img [src]="photo.url" class="card-img-top" alt="{{ photo.title }}">
+            <div class="position-absolute bottom-0 start-0 w-100 p-3" 
+                 style="background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0))">
+              <h5 class="card-title text-white mb-0">{{ photo.title }}</h5>
+            </div>
+          </div>
+          <div class="card-body px-0 pt-3">
             <p class="card-text">{{ photo.description }}</p>
-            <p class="card-text"><small class="text-muted">Foto #{{ i + 1 }} de {{ photos.length }}</small></p>
+            <div class="d-flex justify-content-between align-items-center">
+              <p class="card-text mb-0"><small class="text-muted">Foto #{{ i + 1 }}</small></p>
+              <a href="#" class="btn btn-sm" style="color: var(--primary-color);">Ver más</a>
+            </div>
           </div>
         </div>
       </div>
@@ -39,10 +59,39 @@
   <!-- La tabla de datos se ha movido debajo de los botones Main/Secondary action -->
 
   <!-- Pie de pagina con ejemplos de string interpolation -->
-  <footer class="bg-light py-4 mt-5">
-    <div class="container text-center">
-      <p>&copy; 2025 {{ title }} - Version {{ version }}</p>
-      <small class="text-muted">Developed by {{ developer }}</small>
+  <footer class="py-5 mt-5" style="background-color: var(--accent-color);">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h4 class="text-white">{{ title }}</h4>
+          <p class="text-white-50">Tu galería de fotos favorita</p>
+        </div>
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5 class="text-white">Enlaces Rápidos</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white-50">Inicio</a></li>
+            <li><a href="#" class="text-white-50">Galería</a></li>
+            <li><a href="#" class="text-white-50">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-white">Síguenos</h5>
+          <div class="d-flex gap-3 mt-3">
+            <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="text-white-50 mb-0">&copy; 2025 {{ title }} - Version {{ version }}</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <small class="text-white-50">Developed by {{ developer }}</small>
+        </div>
+      </div>
     </div>
   </footer>
 </div>
@@ -89,8 +138,10 @@
                     <p class="lead text-body-secondary">Something short and leading about the collection below—its
                         contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply
                         skip over it entirely.</p>
-                    <p> <a href="#" class="btn btn-primary my-2">Main call to action</a> <a href="#"
-                            class="btn btn-secondary my-2">Secondary action</a> </p>
+                    <p> 
+                        <a href="#" class="btn my-2" style="background-color: var(--primary-color); color: white;">Main call to action</a> 
+                        <a href="#" class="btn btn-outline-secondary my-2">Secondary action</a> 
+                    </p>
                     
                     <!-- Componente de tabla de datos debajo de los botones -->
                     <div class="mt-5">

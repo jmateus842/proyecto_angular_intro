@@ -1,15 +1,18 @@
 <div class="container py-5">
   <!-- String interpolation - Titulo y subtitulo -->
   <div class="text-center mb-5">
-    <h1>{{ companyName }}</h1>
+    <h1 style="color: var(--primary-color);">{{ companyName }}</h1>
+    <div class="d-flex justify-content-center mb-3">
+      <div style="width: 60px; height: 3px; background-color: var(--primary-color);"></div>
+    </div>
     <p class="lead">{{ tagline }}</p>
   </div>
 
   <div class="row">
     <!-- Panel izquierdo - Formulario simple -->
     <div class="col-md-6 mb-4">
-      <div class="card shadow h-100">
-        <div class="card-header bg-primary text-white">
+      <div class="card shadow h-100 border-0">
+        <div class="card-header text-white" style="background-color: var(--primary-color);">
           <h3 class="mb-0">Contáctanos</h3>
         </div>
         <div class="card-body">
@@ -60,8 +63,8 @@
     
     <!-- Panel derecho - Mecanismos de contacto usando *ngFor -->
     <div class="col-md-6 mb-4">
-      <div class="card shadow h-100">
-        <div class="card-header bg-success text-white">
+      <div class="card shadow h-100 border-0">
+        <div class="card-header text-white" style="background-color: var(--accent-color);">
           <h3 class="mb-0">Mecanismos de Contacto</h3>
         </div>
         <div class="card-body">

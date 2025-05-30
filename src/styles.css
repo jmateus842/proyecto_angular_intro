@@ -1,1 +1,78 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilos globales para tema blanco y rojo oscuro */
+
+:root {
+  --primary-color: #8B0000; /* Rojo oscuro */
+  --primary-light: #aa1414;
+  --primary-dark: #6a0000;
+  --accent-color: #222222;
+  --text-light: #ffffff;
+  --text-dark: #333333;
+  --background-light: #ffffff;
+  --background-grey: #f8f8f8;
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Estilos para los encabezados */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+/* Personalización de Bootstrap */
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: var(--text-light) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-light) !important;
+  border-color: var(--primary-light) !important;
+}
+
+.btn-outline-primary {
+  color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color) !important;
+  color: var(--text-light) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px var(--shadow-color);
+}
+
+.card-header.bg-primary {
+  background-color: var(--primary-color) !important;
+  color: var(--text-light);
+  border-bottom: none;
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+}
