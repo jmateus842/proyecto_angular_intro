@@ -1,0 +1,15 @@
+/* Basic styling for the table */
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+}
+
+th {
+  font-weight: bold;
+  background-color: #f8f9fa;
+}
+
+tr:hover {
+  background-color: rgba(0,0,0,.075);
+}
